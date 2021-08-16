@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 
 class PostController extends Controller
 {
     public function index() 
     {
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(config('app.posts'));
+               
         return view('index', ['posts' => $posts]);
     }
 }
