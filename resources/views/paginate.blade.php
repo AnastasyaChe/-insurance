@@ -13,10 +13,10 @@
 @foreach ($elements as $element)
 @if (is_array($element))
 @foreach ($element as $page => $url)
-@if($page <= config('app.links'))
+<!-- @if($page <= config('app.links')) -->
 
 <li><a href="{{ $url }}">{{ $page }}</a></li>
-@endif
+<!-- @endif -->
 @endforeach
 @endif
 @endforeach
